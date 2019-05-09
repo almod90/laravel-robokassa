@@ -1,6 +1,6 @@
 <?php
 
-namespace Chelout\Robokassa;
+namespace Almod90\Robokassa;
 
 use Lexty\Robokassa\Auth;
 use Lexty\Robokassa\Payment;
@@ -15,13 +15,16 @@ class Robokassa
     protected $testPassword2;
     protected $password1;
     protected $password2;
-    protected $resultUrl;
-    protected $successUrl;
-    protected $failUrl;
 
+    /** @var Auth */
     public $auth;
+    /** @var Payment */
     public $payment;
 
+    /**
+     * Robokassa constructor.
+     * @throws \Exception
+     */
     public function __construct()
     {
         $config = config('robokassa');
@@ -35,9 +38,6 @@ class Robokassa
         $this->hashAlgo = $config['hash_algo'];
         $this->password1 = $this->testMode ? $config['test_password1'] : $config['password1'];
         $this->password2 = $this->testMode ? $config['test_password2'] : $config['password2'];
-        $this->resultUrl = $config['result_url'];
-        $this->successUrl = $config['success_url'];
-        $this->failUrl = $config['fail_url'];
 
         $this->auth = new Auth($this->shopId, $this->password1, $this->password2, $this->testMode);
         $this->auth->setHashAlgo($this->hashAlgo);
@@ -129,12 +129,12 @@ class Robokassa
         return $this;
     }
 
-    public function setReceipt($receipt)
+    /*public function setReceipt($receipt)
     {
         $this->payment->setReceipt($receipt);
 
         return $this;
-    }
+    }*/
 
     public function getFormUrl($type = null)
     {

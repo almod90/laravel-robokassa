@@ -1,13 +1,18 @@
 {
-    "name": "chelout/robokassa",
+    "name": "almod90/robokassa",
     "description": "Laravel Robokassa",
     "keywords": [
         "laravel",
         "robokassa"
     ],
-    "homepage": "https://github.com/chelout/robokassa",
+    "homepage": "https://github.com/almod90/robokassa",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Alex Modin",
+            "email": "almod90@gmail.com",
+            "role": "Developer"
+        },
         {
             "name": "Viacheslav Ostrovskiy",
             "email": "chelout@gmail.com",
@@ -16,21 +21,22 @@
     ],
     "require": {
         "php": ">=7.0",
-        "illuminate/support": "~5.5",
+        "laravel/framework": "~5.5",
         "lexty/robokassa": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "~6.0",
+        "phpunit/phpunit": "~6.0 || ~8.0",
+        "laravel/laravel": "~5.5",
         "mockery/mockery": "^0.9.1"
     },
     "autoload": {
         "psr-4": {
-            "Chelout\\Robokassa\\": "src"
+            "Almod90\\Robokassa\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Chelout\\Robokassa\\Test\\": "tests"
+            "Almod90\\Robokassa\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -39,12 +45,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Chelout\\Robokassa\\RobokassaServiceProvider"
+                "Almod90\\Robokassa\\RobokassaServiceProvider"
             ],
             "aliases": {
-                "Robokassa": "Chelout\\Robokassa\\Facade"
+                "Robokassa": "Almod90\\Robokassa\\Facade"
             }
         }
     },
+    "prefer-stable": true,
     "minimum-stability": "dev"
 }

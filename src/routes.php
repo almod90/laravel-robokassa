@@ -1,11 +1,15 @@
 <?php
 
-namespace Chelout\Robokassa\Controllers;
+namespace Almod90\Robokassa\Controllers;
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('payment')->group(function () {
-    Route::match(['get', 'post'], 'result', PaymentResultController::class)->name('robokassa.payment.result');
-    Route::match(['get', 'post'], 'success', PaymentSuccessController::class)->name('robokassa.payment.success');
-    Route::match(['get', 'post'], 'fail', PaymentFailController::class)->name('robokassa.payment.fail');
+$config = config('robokassa');
+$uri = $config['uri'];
+$action = $config['action'];
+
+Route::prefix($config['prefix'])->group(function () use ($action, $uri) {
+    Route::match(['get', 'post'], $uri['result'], $action['result'])->name('robokassa.payment.result');
+    Route::match(['get', 'post'], $uri['success'], $action['success'])->name('robokassa.payment.success');
+    Route::match(['get', 'post'], $uri['fail'], $action['fail'])->name('robokassa.payment.fail');
 });

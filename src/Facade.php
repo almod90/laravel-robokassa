@@ -1,6 +1,6 @@
 <?php
 
-namespace Chelout\Robokassa;
+namespace Almod90\Robokassa;
 
 class Facade extends \Illuminate\Support\Facades\Facade
 {

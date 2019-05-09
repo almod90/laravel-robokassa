@@ -1,6 +1,6 @@
 <?php
 
-namespace Chelout\Robokassa\Events;
+namespace Almod90\Robokassa\Events;
 
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Log;

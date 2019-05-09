@@ -1,11 +1,11 @@
 <?php
 
-namespace Chelout\Robokassa\Controllers;
+namespace Almod90\Robokassa\Controllers;
 
 use App\Http\Controllers\Controller;
-use Chelout\Robokassa\Events\PaymentAccepted;
-use Chelout\Robokassa\Events\PaymentRejected;
-use Chelout\Robokassa\Robokassa;
+use Almod90\Robokassa\Events\PaymentAccepted;
+use Almod90\Robokassa\Events\PaymentRejected;
+use Almod90\Robokassa\Robokassa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 

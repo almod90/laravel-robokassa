@@ -1,6 +1,6 @@
 <?php
 
-namespace Chelout\Robokassa\Controllers;
+namespace Almod90\Robokassa\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

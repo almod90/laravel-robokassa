@@ -1,9 +1,9 @@
 <?php
 
-namespace Chelout\Robokassa\Controllers;
+namespace Almod90\Robokassa\Controllers;
 
 use App\Http\Controllers\Controller;
-use Chelout\Robokassa\Robokassa;
+use Almod90\Robokassa\Robokassa;
 use Illuminate\Http\Request;
 
 class PaymentSuccessController extends Controller

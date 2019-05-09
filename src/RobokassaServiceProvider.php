@@ -1,6 +1,6 @@
 <?php
 
-namespace Chelout\Robokassa;
+namespace Almod90\Robokassa;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
@@ -26,7 +26,9 @@ class RobokassaServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'robokassa');
 
-        $this->loadRoutesFrom(__DIR__.'/routes.php');
+        if (config('robokassa.routes')) {
+            $this->loadRoutesFrom(__DIR__ . '/routes.php');
+        }
     }
 
     /**
@@ -37,7 +39,7 @@ class RobokassaServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('robokassa', function (Application $app) {
-            return new Robokassa(config('robokassa'));
+            return new Robokassa();
         });
     }
 
